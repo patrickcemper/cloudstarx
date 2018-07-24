@@ -1,4 +1,4 @@
-package engineering.patrickcemper.cloudstarx;
+package patrickcemper.cloudstarx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
