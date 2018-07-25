@@ -1,4 +1,4 @@
-package patrickcemper.cloudstarx;
+package patrickcemper.cloudstarx.controller;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,14 +25,14 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testTestservice() throws Exception {
-        mockMvc.perform(get("/testservice"))
+    public void testTestService() throws Exception {
+        mockMvc.perform(get("/testService"))
                 .andExpect(content().string(containsString("the most primitive MVC test service")));
     }
 
     @Test
-    public void testTestserviceWithParam() throws Exception {
-        mockMvc.perform(get("/testservice").param("someparam", "ABCDE"))
+    public void testTestServiceWithParam() throws Exception {
+        mockMvc.perform(get("/testService").param("someparam", "ABCDE"))
                 .andExpect(content().string(containsString("optional parameter &lt;someparam&gt;: ABCDE.")));
     }
 
