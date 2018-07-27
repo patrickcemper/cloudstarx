@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
  * @version 0.1.0-SNAPSHOT
  */
 @SpringBootApplication
-@EntityScan("patrickcemper.cloudstarx.model")
+@EntityScan("patrickcemper.cloudstarx.entities")
 public class Application {
 
     public static void main(String[] args) {

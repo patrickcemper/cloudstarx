@@ -1,36 +1,38 @@
-package patrickcemper.cloudstarx.model;
+package patrickcemper.cloudstarx.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.ArrayList;
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+@SequenceGenerator(name="PlaceSequence")
 public class Place {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "PlaceSequence")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
     private Double rating;
 
-//    private List<Triangle> triangles;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private Set<Point> points;
 
     public Place() {
-        // Do nothing.
     }
 
     public Place(String name, String description, Double rating) {
         this.name = name;
         this.description = description;
         this.rating = rating;
-//        this.triangles = new ArrayList<>();
     }
 
     public Long getId() {
@@ -65,12 +67,12 @@ public class Place {
         this.rating = rating;
     }
 
-//    public List<Triangle> getTriangles() {
-//        return triangles;
-//    }
-//
-//    public void setTriangles(List<Triangle> triangles) {
-//        this.triangles = triangles;
-//    }
+    public Set<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(Set<Point> points) {
+        this.points = points;
+    }
 
 }
