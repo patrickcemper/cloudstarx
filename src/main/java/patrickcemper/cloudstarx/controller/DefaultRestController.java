@@ -24,6 +24,7 @@ public class DefaultRestController {
     @RequestMapping(value = "/deleteAllData")
     public String deleteAllData() {
         placeRepository.deleteAll();
+        routeRepository.deleteAll();
         return "All data deleted.";
     }
 
