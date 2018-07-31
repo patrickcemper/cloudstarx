@@ -4,9 +4,7 @@ import patrickcemper.cloudstarx.entities.Place;
 import patrickcemper.cloudstarx.entities.Point;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class PlaceService {
 
@@ -22,7 +20,7 @@ public class PlaceService {
     private static Place createDonaupark() {
         Place place = new Place("Donaupark", "Large park with rose, lily, herb & moorland gardens, a lake & 250m " +
                 "tower on a former landfill site. ((c) 2018 Google)", Math.round(Math.random()*90) / 10.0 + 1.0);
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(place, 16.412099, 48.244009));
         points.add(new Point(place, 16.420760, 48.240103));
         points.add(new Point(place, 16.416781, 48.237134));
@@ -37,7 +35,7 @@ public class PlaceService {
     private static Place createDonauZentrum() {
         Place place = new Place("Donau Zentrum", "A shopping center in Vienna's 22nd district " +
                 "of Donaustadt. ((c) 2018 Wikipedia, Google)", Math.round(Math.random()*90) / 10.0 + 1.0);
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(place, 16.435435, 48.244481));
         points.add(new Point(place, 16.438265, 48.243144));
         points.add(new Point(place, 16.439932, 48.242860));
@@ -51,7 +49,7 @@ public class PlaceService {
     private static Place createAlbertSchultzEishalle() {
         Place place = new Place("Albert Schultz Eishalle", "Albert Schultz Eishalle is an indoor sporting arena " +
                 "located in Vienna, Austria. ((c) 2018 Wikipedia)", Math.round(Math.random()*90) / 10.0 + 1.0);
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(place, 16.433072, 48.247131));
         points.add(new Point(place, 16.433030, 48.246526));
         points.add(new Point(place, 16.434128, 48.246532));
@@ -67,7 +65,7 @@ public class PlaceService {
         Place place = new Place("VetMed Vienna", "The University of Veterinary Medicine Vienna was founded " +
                 "in 1767 as the world's third school for veterinary medicine (after Lyon and Alfort) by Milan's " +
                 "Ludovico Scotti. ((c) 2018 Wikipedia)", Math.round(Math.random()*90) / 10.0 + 1.0);
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(place, 16.434621, 48.258363));
         points.add(new Point(place, 16.431967, 48.254735));
         points.add(new Point(place, 16.430088, 48.251495));

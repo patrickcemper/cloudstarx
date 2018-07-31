@@ -3,7 +3,7 @@ package patrickcemper.cloudstarx.entities;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @SequenceGenerator(name="RouteSequence")
@@ -21,7 +21,8 @@ public class Route {
 
     @OneToMany(cascade = CascadeType.ALL)
     @JsonManagedReference
-    private Set<Point> points;
+    @OrderBy("id")
+    private List<Point> points;
 
     public Route() {
     }
@@ -55,11 +56,11 @@ public class Route {
         this.description = description;
     }
 
-    public Set<Point> getPoints() {
+    public List<Point> getPoints() {
         return points;
     }
 
-    public void setPoints(Set<Point> points) {
+    public void setPoints(List<Point> points) {
         this.points = points;
     }
 

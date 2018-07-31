@@ -4,9 +4,7 @@ import patrickcemper.cloudstarx.entities.Point;
 import patrickcemper.cloudstarx.entities.Route;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class RouteService {
 
@@ -20,7 +18,7 @@ public class RouteService {
 
     private static Route createRoute1() {
         Route route = new Route("Route 1", "A very nice route to cycle to the Donauturm");
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(route, 16.435674, 48.262917));
         points.add(new Point(route, 16.435965, 48.261526));
         points.add(new Point(route, 16.435858, 48.260080));
@@ -45,7 +43,7 @@ public class RouteService {
 
     private static Route createRoute2() {
         Route route = new Route("Route 2", "My favourite running route when I need to burn off some energy.");
-        Set<Point> points = new HashSet<>();
+        List<Point> points = new ArrayList<>();
         points.add(new Point(route, 16.435380, 48.259139));
         points.add(new Point(route, 16.434803, 48.258395));
         points.add(new Point(route, 16.429428, 48.257367));

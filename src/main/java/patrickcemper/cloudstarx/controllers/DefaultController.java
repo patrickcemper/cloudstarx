@@ -1,4 +1,4 @@
-package patrickcemper.cloudstarx.controller;
+package patrickcemper.cloudstarx.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

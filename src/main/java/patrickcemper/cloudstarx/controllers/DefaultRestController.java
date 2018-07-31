@@ -1,11 +1,14 @@
-package patrickcemper.cloudstarx.controller;
+package patrickcemper.cloudstarx.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import patrickcemper.cloudstarx.entities.Place;
 import patrickcemper.cloudstarx.entities.Route;
+import patrickcemper.cloudstarx.repositories.PlaceRepository;
+import patrickcemper.cloudstarx.repositories.RouteRepository;
 import patrickcemper.cloudstarx.services.PlaceService;
 import patrickcemper.cloudstarx.services.RouteService;
 
@@ -42,12 +45,22 @@ public class DefaultRestController {
         return resultList;
     }
 
-    @RequestMapping("/getPlace")
+    @GetMapping("/findAllPlaces")
+    public List<Place> findAllPlaces() {
+        return placeRepository.findAllByOrderById();
+    }
+
+    @GetMapping("/findAllRoutes")
+    public List<Route> findAllRoutes() {
+        return routeRepository.findAllByOrderById();
+    }
+
+    @GetMapping("/getPlace")
     public Place getPlace(@RequestParam(value="id") Long id) {
         return placeRepository.findById(id).orElse(null);
     }
 
-    @RequestMapping("/getRoute")
+    @GetMapping("/getRoute")
     public Route getRoute(@RequestParam(value="id") Long id) {
         return routeRepository.findById(id).orElse(null);
     }
